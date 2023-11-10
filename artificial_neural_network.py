@@ -52,8 +52,7 @@ best_mlp_classifier = MLPClassifier(random_state=42, max_iter=1000, **best_param
 best_mlp_classifier.fit(X_train, y_train)
 
 # Save the trained model to a file
-# save the model to disk
-filename = 'Sf_ann_model.joblib.sav'
+filename = 'Sf_ann_model.sav'
 joblib.dump(best_mlp_classifier, filename)
 
 # Make predictions on the test data
