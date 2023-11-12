@@ -11,7 +11,7 @@ library(ggplot2)
 library(sf)
 
 # Read in csv file and add a column for species to be used later
-d <- read.csv("future_combined_data/2040/2040_ssp585_combined_data.csv", sep=",", header=TRUE)
+d <- read.csv("future_combined_data/2100/2100_ssp126_combined_data.csv", sep=",", header=TRUE)
 print(nrow(d))
 
 print(paste0("Number of records: ", nrow(d)))
@@ -44,5 +44,5 @@ ggplot() +
 
 
 # Create a csv file with the cleaned presence data
-file_path <- "future_combined_data/2040/2040_ssp585_cleaned_data.csv"
+file_path <- "future_combined_data/2100/2100_ssp126_cleaned_data.csv"
 write.csv(rl, file = file_path, row.names = FALSE)
