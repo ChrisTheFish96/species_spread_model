@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 import joblib
 
 # Read the CSV data and select relevant columns
-data = pd.read_csv('future_combined_data/2040/2040_ssp585_combined_data.csv') 
+data = pd.read_csv('future_combined_data/2040/2040_ssp585_cleaned_data.csv') 
 selected_columns = ['Longitude', 'Latitude',"bio1","bio2","bio3","bio4","bio5","bio6","bio7","bio8","bio9","bio10","bio11","bio12","bio13","bio14","bio15","bio16","bio17","bio18","bio19"]
 data = data[selected_columns]
 
@@ -31,6 +31,12 @@ predictions = rfr_model.predict(X_scaled)
 
 # Create a DataFrame with longitude, latitude, and presence columns
 result_df = pd.DataFrame({'longitude': data['Longitude'], 'latitude': data['Latitude'], 'presence': predictions})
-
-# Write the DataFrame to a CSV file
-result_df.to_csv('future_combined_data/2040/2040_ssp585_predictions.csv', index=False)
+# Filter rows where 'presence' column is equal to 1
+filtered_df = result_df[result_df['presence'] == 1]
+# Check if there are any rows with presence equal to 1
+if not filtered_df.empty:
+    # Write the filtered DataFrame to a CSV file
+    filtered_df.to_csv('future_combined_data/2040/2040_ssp585_predictions.csv', index=False)
+    print("Predictions with presence equal to 1 have been written to presence_predictions.csv")
+else:
+    print("No predictions with presence equal to 1 found.")
