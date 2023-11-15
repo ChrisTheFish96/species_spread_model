@@ -1,0 +1,30 @@
+body {
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  #map,
+  #map2,
+  body,
+  html {
+    max-width: 100%;
+    height: 400px;
+  }
+
+  
+#buttons-container{
+  margin: 25px;
+  width: 100%;
+  height: 15px;
+  }
+
+#buttons-container{ 
+  width:90%;
+  display: flex;
+  justify-content: space-around;
+}
+button {
+  height:40px;
+  width: 100%;
+  margin: 5px; /* or whatever you like */
+}
