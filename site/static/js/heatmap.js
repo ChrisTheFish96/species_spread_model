@@ -59,7 +59,7 @@
     let year2100Array = [];
 
     // Function to update the heatmap based on the selected year
-    function updateHeatmap(year) {
+    function updateHeatmap(map_object,year) {
         // Clear existing heatmap layer
         if (heat) {
             myMap.removeLayer(heat);
@@ -116,7 +116,7 @@
         } else if (year === '2100') {
             heatArray = currentYearArray.concat(year2040Array, year2060Array, year2080Array, year2100Array);
         }
-
+        
         // Create a new heatmap layer with the new data and add it to the map
         heat = L.heatLayer(heatArray, {
             gradient: {

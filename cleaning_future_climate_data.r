@@ -11,7 +11,7 @@ library(ggplot2)
 library(sf)
 
 # Read in csv file and add a column for species to be used later
-d <- read.csv("future_combined_data/2100/2100_ssp126_combined_data.csv", sep=",", header=TRUE)
+d <- read.csv("bio1.csv", sep=",", header=FALSE)
 print(nrow(d))
 
 print(paste0("Number of records: ", nrow(d)))
@@ -26,7 +26,7 @@ print(paste0("Number of records after filtering:", nrow(filtered_data)))
 
 # Record level checking
 # Flag problems using cc_sea and remove them from the dataset
-rl <- cc_sea(d,lon="Longitude", lat="Latitude", ref=NULL, scale=110, value="clean", speedup=TRUE, verbose=TRUE, buffer=NULL )
+rl <- cc_sea(d,lon="V1", lat="V2", ref=NULL, scale=110, value="clean", speedup=TRUE, verbose=TRUE, buffer=NULL )
 
 print(paste0("Number of records after cleaning: ", nrow(rl)))
 

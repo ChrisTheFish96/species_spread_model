@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Water Hydrants in Western Australia</title>
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+        <!-- data file -->
+        <script src="static/js/spp126_geoData.js"></script>
+    <!-- Leaflet JavaScript code -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+
+
+    <!-- D3 library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Our CSS  -->
+    <link rel="stylesheet" href="static/css/style.css" />
+  </head>
+
+<body id="page-top">
+    <div class="row text-center">
+        <div class="col-lg-8">
+            <div class="card shadow mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="text-primary fw-bold m-0">Earnings Overview</h6>
+                    <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
+                        <div class="dropdown-menu shadow dropdown-menu-end animated--fade-in">
+                            <p class="text-center dropdown-header">dropdown header:</p><a class="dropdown-item" href="#">&nbsp;Action</a><a class="dropdown-item" href="#">&nbsp;Another action</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item" href="#">&nbsp;Something else here</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-body">
+                        <div id="leafletmap"></div>
+                        <!-- <div id="buttons-container">
+                          <button id="btnCurrent" onclick="updateHeatmap('current')">Current</button>
+                          <button id="btn2040" onclick="updateHeatmap('2040')">2040</button>
+                          <button id="btn2060" onclick="updateHeatmap('2060')">2060</button>
+                          <button id="btn2080" onclick="updateHeatmap('2080')">2080</button>
+                          <button id="btn2100" onclick="updateHeatmap('2100')">2100</button>
+                      </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div id="buttons-container">
+            <div class="row">
+                <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btnCurrent" onclick="updateHeatmap('245','current')">Current</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btn2040" onclick="updateHeatmap('245','2040')">2040</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btn2060" onclick="updateHeatmap('245','2060')">2060</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btn2080" onclick="updateHeatmap('245','2080')">2080</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btn2100" onclick="updateHeatmap('245','2100')">2100</button></div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- Leaflet heatmap plugin-->
+    <script type="text/javascript" src="static/js/leaflet-heat.js"></script>
+    <script src="static/js/heatmap.js"></script>
+</body>
+</html>

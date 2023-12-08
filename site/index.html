@@ -32,7 +32,7 @@
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item"><a class="nav-link active" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="ssp126.html"><i class="fas fa-user"></i><span>SSP126</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="table.html"><i class="fas fa-table"></i><span>Table</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="login.html"><i class="far fa-user-circle"></i><span>Login</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span>Register</span></a></li>
@@ -78,28 +78,69 @@
                         <div class="col-lg-4">
                             <div id="buttons-container">
                             <div class="row">
-                                <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btnCurrent" onclick="updateHeatmap('current')">Current</button></div>
+                                <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btnCurrent" onclick="updateHeatmap('126','current')">Current</button></div>
                             </div>
                             <div class="row">
-                                <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btn2040" onclick="updateHeatmap('2040')">2040</button></div>
+                                <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btn2040" onclick="updateHeatmap('126','2040')">2040</button></div>
                             </div>
                             <div class="row">
-                                <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btn2060" onclick="updateHeatmap('2060')">2060</button></div>
+                                <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btn2060" onclick="updateHeatmap('126','2060')">2060</button></div>
                             </div>
                             <div class="row">
-                                <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btn2080" onclick="updateHeatmap('2080')">2080</button></div>
+                                <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btn2080" onclick="updateHeatmap('126','2080')">2080</button></div>
                             </div>
                             <div class="row">
-                                <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btn2100" onclick="updateHeatmap('2100')">2100</button></div>
+                                <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btn2100" onclick="updateHeatmap('126','2100')">2100</button></div>
                             </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">
-                            <h1>Heading</h1>
-                            <p>Paragraph</p>
-                            
+                        <div class="row text-center">
+                            <div class="col-lg-8">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h6 class="text-primary fw-bold m-0">Earnings Overview</h6>
+                                        <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
+                                            <div class="dropdown-menu shadow dropdown-menu-end animated--fade-in">
+                                                <p class="text-center dropdown-header">dropdown header:</p><a class="dropdown-item" href="#">&nbsp;Action</a><a class="dropdown-item" href="#">&nbsp;Another action</a>
+                                                <div class="dropdown-divider"></div><a class="dropdown-item" href="#">&nbsp;Something else here</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card-body">
+                                            <div id="map2"></div>
+                                            <!-- <div id="buttons-container">
+                                              <button id="btnCurrent" onclick="updateHeatmap('current')">Current</button>
+                                              <button id="btn2040" onclick="updateHeatmap('2040')">2040</button>
+                                              <button id="btn2060" onclick="updateHeatmap('2060')">2060</button>
+                                              <button id="btn2080" onclick="updateHeatmap('2080')">2080</button>
+                                              <button id="btn2100" onclick="updateHeatmap('2100')">2100</button>
+                                          </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div id="buttons-container">
+                                <div class="row">
+                                    <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btnCurrent" onclick="updateHeatmap('245','current')">Current</button></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btn2040" onclick="updateHeatmap('245','2040')">2040</button></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btn2060" onclick="updateHeatmap('245','2060')">2060</button></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btn2080" onclick="updateHeatmap('245','2080')">2080</button></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><button class="btn btn-outline-primary btn-lg border-3" id="btn2100" onclick="updateHeatmap('245','2100')">2100</button></div>
+                                </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">

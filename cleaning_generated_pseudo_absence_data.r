@@ -11,13 +11,13 @@ library(ggplot2)
 library(sf)
 
 # Read in csv file and add a column for species to be used later
-d <- read.csv("absence_df.csv", sep=",", header=TRUE)
+d <- read.csv("absence_data_30s.csv", sep=",", header=TRUE)
 print(nrow(d))
 d$species <- 'Spodoptera frugiperda'
 
 print(paste0("Number of records downloaded: ", nrow(d)))
 
-
+d$Presence <- 0
 # Check the column names of data to ensure download was successful
 print("Column names in download:")
 colnames(d)
@@ -40,16 +40,17 @@ print(paste0("Number of records after cleaning: ", nrow(rl)))
 
 # Plot data to get an overview of presence data and to ensure data was cleaned correctly
 wm <- borders("world", colour = "gray50", fill = "gray50")
+
 ggplot() +
   coord_fixed() +
   wm +
   geom_point(data = rl,
-             aes(x = decimalLongitude, y = decimalLatitude),
+             aes(x = Longitude, y = Latitude),
              colour = "darkred",
              size = 0.5) +
   theme_bw()
 
 
 # Create a csv file with the cleaned presence data
-file_path <- "CLEANED_S_frugiperda_data.csv"
+file_path <- "CLEANED_absence_data.csv"
 write.csv(rl, file = file_path, row.names = FALSE)

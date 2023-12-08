@@ -7,19 +7,19 @@ from sklearn.preprocessing import StandardScaler
 import joblib
 
 # Read the CSV data and select relevant columns
-data = pd.read_csv('data_files/shuffled_train_test_pa_data.csv') 
-selected_columns = ['Longitude', 'Latitude', 'Presence', "bio1","bio2","bio3","bio4","bio5","bio6","bio7","bio8","bio9","bio10","bio11","bio12","bio13","bio14","bio15","bio16","bio17","bio18","bio19"]
+data = pd.read_csv('current_data.csv') 
+selected_columns = ['Longitude', 'Latitude', 'Presence', "bio1","bio2","bio3","bio4","bio5","bio6","bio7","bio8","bio9","bio10","bio11","bio12","bio13","bio14","bio15","bio16","bio17","bio18","bio19","gdd10","ngd10"]
 data = data[selected_columns]
 
 # Split the data into features (bio1-bio9) and target (presence)
-X = data[['Longitude', 'Latitude', "bio1","bio2","bio3","bio4","bio5","bio6","bio7","bio8","bio9","bio10","bio11","bio12","bio13","bio14","bio15","bio16","bio17","bio18","bio19"]]
+X = data[['Longitude', 'Latitude', "bio1","bio2","bio3","bio4","bio5","bio6","bio7","bio8","bio9","bio10","bio11","bio12","bio13","bio14","bio15","bio16","bio17","bio18","bio19","gdd10","ngd10"]]
 y = data['Presence']
 
 # Select the relevant columns
 # Separate the environmental features from latitude and longitude
 # Standardize the environmental features
 # Combine the scaled environmental features with latitude and longitude
-bios = X[["bio1","bio2","bio3","bio4","bio5","bio6","bio7","bio8","bio9","bio10","bio11","bio12","bio13","bio14","bio15","bio16","bio17","bio18","bio19"]]
+bios = X[["bio1","bio2","bio3","bio4","bio5","bio6","bio7","bio8","bio9","bio10","bio11","bio12","bio13","bio14","bio15","bio16","bio17","bio18","bio19","gdd10","ngd10"]]
 lat_lon = X[['Longitude', 'Latitude']]
 scaler_bio = StandardScaler()
 bios_scaled = scaler_bio.fit_transform(bios)
@@ -33,7 +33,7 @@ rf_classifier = RandomForestClassifier(random_state=42)
 
 # Define a parameter grid to search over
 param_grid = {
-    'n_estimators': [200, 300, 600],
+    'n_estimators': [100, 200, 300],
     'max_depth': [None, 10, 20],
     'min_samples_split': [2, 5, 10],
     'min_samples_leaf': [1, 2, 4],
