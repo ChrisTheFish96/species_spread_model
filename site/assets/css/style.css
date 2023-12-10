@@ -1,0 +1,68 @@
+  #leafletmap{
+    max-width: 700px;
+    height: 400px;
+  }
+
+  element.style{
+    padding-left: 0px;
+    margin-left: -154px;
+    margin-right: -154px;
+  }
+  
+  .active-button {
+    background-color: rgb(255,210,0) !important;
+    color: black !important; 
+}
+  
+.timeline{
+  position: relative;
+  max-width: 1200px;
+  margin:100px auto;
+}
+
+.container-time{
+  padding: 10px 50px;
+  position: relative;
+  width: 50%;
+}
+
+.textbox{
+  padding: 20px 30px;
+  background: rgb(107, 62, 62);
+  position: relative;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.left-container{
+  left: 0;
+}
+
+.right-container{
+  right: 50%;
+}
+
+.container-time img {
+  position: absolute;
+  width: 60px;
+  border-radius: 50%;
+  border: 5px solid black;
+  right: -30px;
+  top: 32px;
+  z-index: 10;
+}
+
+.left-container img{
+  right: -30px;
+}
+
+.timeline::after{
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background: pink;
+  top: 0;
+  margin-left: -3px;
+  z-index: -1;
+}
