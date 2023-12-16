@@ -1,17 +1,17 @@
   #leafletmap{
-    max-width: 700px;
+    max-width: 800px;
     height: 400px;
-  }
-
-  element.style{
-    padding-left: 0px;
-    margin-left: -154px;
-    margin-right: -154px;
+    text-align: center;
   }
   
-  .active-button {
-    background-color: rgb(255,210,0) !important;
-    color: black !important; 
+  #2040-text,
+  #2070-text,
+  #2100-text {
+    min-height: 400px; /* Adjust the height as needed */
+  }
+.active-button {
+  background-color: rgb(255,210,0) !important;
+  color: black !important; 
 }
   
 .timeline{
