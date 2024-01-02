@@ -1,5 +1,5 @@
 # Species spread modelling
-For easy access to the site <a href="https://christhefish96.github.io/species_spread_model/" target="_blank">click here</a>
+For easy access to the site [click here](https://christhefish96.github.io/species_spread_model/)
 
 ## Overall idea:
 This was a passion project of mine that aimed to combine science and conventional machine learning tools to create a visual representation of how a pest species distribution can spread due to the effects of climate change.
