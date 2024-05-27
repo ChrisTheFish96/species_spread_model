@@ -1,32 +1,33 @@
-  #leafletmap{
-    max-width: 800px;
-    height: 400px;
-    text-align: center;
-  }
-  
-  #2040-text,
-  #2070-text,
-  #2100-text {
-    min-height: 400px; /* Adjust the height as needed */
-  }
-.active-button {
-  background-color: rgb(255,210,0) !important;
-  color: black !important; 
-}
-  
-.timeline{
-  position: relative;
-  max-width: 1200px;
-  margin:100px auto;
+#leafletmap {
+  max-width: 800px;
+  height: 400px;
+  text-align: center;
 }
 
-.container-time{
+#2040-text,
+#2070-text,
+#2100-text {
+  min-height: 400px; /* Adjust the height as needed */
+}
+
+.active-button {
+  background-color: rgb(255, 210, 0) !important;
+  color: black !important;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 100px auto;
+}
+
+.container-time {
   padding: 10px 50px;
   position: relative;
   width: 50%;
 }
 
-.textbox{
+.textbox {
   padding: 20px 30px;
   background: rgb(107, 62, 62);
   position: relative;
@@ -34,11 +35,11 @@
   font-size: 15px;
 }
 
-.left-container{
+.left-container {
   left: 0;
 }
 
-.right-container{
+.right-container {
   right: 50%;
 }
 
@@ -52,11 +53,11 @@
   z-index: 10;
 }
 
-.left-container img{
+.left-container img {
   right: -30px;
 }
 
-.timeline::after{
+.timeline::after {
   content: '';
   position: absolute;
   width: 6px;
@@ -65,4 +66,36 @@
   top: 0;
   margin-left: -3px;
   z-index: -1;
+}
+
+/* CSS for left and right arrows */
+.button-left::before {
+  content: "\25C0"; /* Unicode character for left-pointing triangle */
+  margin-right: 5px;
+}
+
+.button-right::after {
+  content: "\25B6"; /* Unicode character for right-pointing triangle */
+  margin-left: 5px;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Ensure buttons take full width */
+}
+
+.button-left,
+.button-right {
+  flex: 1; /* Each button takes equal space */
+  text-align: center; /* Center-align button content */
+}
+
+.button-left::before {
+  content: "\25C0"; /* Unicode character for left-pointing triangle */
+  margin-right: 5px;
+}
+
+.button-right::after {
+  content: "\25B6"; /* Unicode character for right-pointing triangle */
+  margin-left: 5px;
 }

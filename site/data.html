@@ -29,7 +29,7 @@
                 <div class="col-md-8 text-center text-md-start mx-auto">
                     <div class="text-center">
                         <h1 class="display-4 fw-bold mb-5">All about the&nbsp;<span class="underline">data</span>.</h1>
-                        <p class="fs-5 text-muted mb-5">This section is to give more information on where the data for this project came from. From the occurrence data to the climate data, everything you would want to know about the data can be found right here.</p>
+                        <p class="fs-5 text-muted mb-5">This section aims to give more information on where the data for this project came from. From the occurrence data to the climate data, everything you would want to know about the data can be found right here.</p>
                     </div>
                 </div>
                 <div class="col-12 col-lg-10 mx-auto">
@@ -75,7 +75,8 @@
                                     <h5 class="fw-bold mb-0 ms-2">Absence data</h5>
                                 </div>
                                 <ul>
-                                    <li><span style="color: rgba(18, 22, 67, 0.75);">Made use of </span><span style="text-decoration: underline; color: rgba(18, 22, 67, 0.75);">pseudoabsences</span></li>
+                                    <li><span style="color: rgba(18, 22, 67, 0.75);">Made use of </span>
+                                        <span title = "Pseudoabsences: A location where a species is assumed to be absent but may actually be present"style="text-decoration: underline; color: rgba(18, 22, 67, 0.75);">pseudoabsences</span></li>
                                     <li>Used R package <em>sp</em> to create these points</li>
                                     <li>Chose to generate 20 000 data points at a resolution of 30s as this will later be cleaned to only contain points on land masses</li>
                                 </ul>
@@ -89,7 +90,15 @@
                                 </div>
                                 <ul>
                                     <li><span style="color: rgba(18, 22, 67, 0.75);">Filtered to contain only points with both latitude and longitude present</span></li>
-                                    <li style="--bs-body-color: #121643;"><em>Coordinate Cleaner </em>was then used to test for <span style="text-decoration: underline;">centroids</span>, <span style="text-decoration: underline;">equal</span>, <span style="text-decoration: underline;">zeros</span>, <span style="text-decoration: underline;">gbif</span>, <span style="text-decoration: underline;">institutions</span>, <span style="text-decoration: underline;">seas</span> and <span style="text-decoration: underline;">duplicates</span></li>
+                                    <li style="--bs-body-color: #121643;"><a href= "https://cran.r-project.org/web/packages/CoordinateCleaner/index.html" target="_blank"><b><em>Coordinate Cleaner </em></b></a>was then used to test for 
+                                        <span title="Centroids: Tests a radius around country centroids" style="text-decoration: underline;">centroids</span>, 
+                                        <span title="Equal: Tests for equal absolute longitude and latitude" style="text-decoration: underline;">equal</span>, 
+                                        <span title="Zeros: Tests for plain zeros, equal latitude and longitude and a radius around the point 0/0." style="text-decoration: underline;">zeros</span>, 
+                                        <span title="GBIF: Tests a one-degree radius around the GBIF headquarters in Copenhagen, Denmark" style="text-decoration: underline;">gbif</span>, 
+                                        <span title="Institutions: Tests a radius around known biodiversity institutions" style="text-decoration: underline;">institutions</span>, 
+                                        <span title="Seas: Tests if coordinates fall into the ocean" style="text-decoration: underline;">seas</span>, and 
+                                        <span title="Duplicates: Checks for identical coordinates or if a species vector is provided for identical coordinates within a species. All but the first records are f lagged as duplicates." style="text-decoration: underline;">duplicates</span>
+                                    </li>
                                     <li>The final presence dataset had 5379 records</li>
                                 </ul>
                             </div>
@@ -101,7 +110,11 @@
                                     <h5 class="fw-bold mb-0 ms-2">Absence cleaning</h5>
                                 </div>
                                 <ul>
-                                    <li style="--bs-body-color: #121643;">The specific<em> CC_sea </em>package from<em> Coordinate Cleaner </em>was then used to test for&nbsp;<span style="text-decoration: underline;">seas</span>. The others were omitted because the pseudoabsences were randomly created.</li>
+                                    <li style="--bs-body-color: #121643;">The specific
+                                        <span title="Removes or flags coordinates outside the reference landmass" style="text-decoration: underline;"> CC_sea </span>
+                                        package from <a href= "https://cran.r-project.org/web/packages/CoordinateCleaner/index.html" target="_blank"><b><em>Coordinate Cleaner </em></b></a>was then used to test for&nbsp;
+                                        <span title="Seas: Tests if coordinates fall into the ocean" style="text-decoration: underline;">seas</span>. The others were omitted because the 
+                                        <span title = "Pseudoabsences: A location where a species is assumed to be absent but may actually be present"style="text-decoration: underline; color: rgba(18, 22, 67, 0.75);">pseudoabsences</span> were randomly created.</li>
                                     <li>The final absence dataset was reduced to 3032 records</li>
                                 </ul>
                             </div>
@@ -125,14 +138,28 @@
             <div class="row">
                 <div class="col-md-6">
                     <h3 class="display-6 fw-bold pb-md-4">Data on current and future&nbsp;<span class="underline">climate</span></h3>
+                    <p>I chose the GFDL-ESM4 model from the CMPI6 scenario as this covers Africa, Asia, and (whatever it was in that paper) better than the other scenarios available currently in the CHELSA-BIOCLIM+ database. This model was created by the National Oceanic and Atmospheric Administration, Geophysical Fluid Dynamics Laboratory, Princeton, NJ 08540, USA and is at a native resolution of 288x180. Point values were extracted at a resolution of 30s.</p>
                 </div>
                 <div class="col-md-6">
-                    <p class="text-muted mb-4">All climate data used in this project were obtained from the Climatologies at High resolution for the Earth’s Land Surface Areas (CHELSA) <span style="text-decoration: underline;">database</span>.&nbsp;</p>
-                </div>
-                <div class="col-md-6 col-xxl-12 pt-4">
-                    <p>I chose the GFDL-ESM4 model from the CMIP6 scenario as this covers Africa, asia and (whatever it was in that paper) better than the other scenarios available currently in the CHELSA-BIOCLIM+ database. This model was created by the National Oceanic and Atmospheric Administration, Geophysical Fluid Dynamics Laboratory, Princeton, NJ 08540, USA and is at a native resolution of 288x180. Point values were extracted at a resolution of 30s.</p>
+                    <p class="text-muted mb-4">All climate data used in this project were obtained from the Climatologies at High resolution for the Earth’s Land Surface Areas (CHELSA) <a href= "https://chelsa-climate.org/" target="_blank"><span style="text-decoration: underline;">database</span></a>.&nbsp;</p>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <img class="img-fluid" src="assets/img/logotest.gif" alt="Logo">
+                    </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p></p> <!-- Empty column to align with the second column -->
+                </div>
+                <div class="col-md-6">
+
+                </div>
+            </div>
+        </div>
+    
+    </section>
+    <section>
+        <div class="container py-4 py-xl-5">
             <div class="row">
                 <div class="col text-center text-md-start">
                     <div class="d-flex justify-content-center align-items-center justify-content-md-start"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-temperature fs-3 text-primary bg-secondary">
@@ -142,7 +169,8 @@
                         </svg>
                         <h5 class="fw-bold mb-0 ms-2">Current data</h5>
                     </div>
-                    <p class="text-muted my-3">Auctor nisi et, habitant gravida ad lectus posuere.</p>
+                    <p class="text-muted my-3">Comprehensive information on historical climate conditions across various regions. It includes datasets derived from observations and reanalysis data, offering insights into parameters such as temperature, precipitation, and other climatic variables over past time periods.</p>
+                    <p class="text-muted my-3">Researchers and practitioners utilize this data to analyze past climate trends, understand regional climate variability, and assess the impacts of climate change on ecosystems, agriculture, water resources, and human societies</p>
                 </div>
                 <div class="col text-center text-md-start">
                     <div class="d-flex justify-content-center align-items-center justify-content-md-start"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-temperature-plus fs-3 text-primary bg-secondary">
@@ -154,7 +182,8 @@
                         </svg>
                         <h5 class="fw-bold mb-0 ms-2">Future data</h5>
                     </div>
-                    <p class="text-muted my-3">Auctor nisi et, habitant gravida ad lectus posuere.</p>
+                    <p class="text-muted my-3">Consists of projections and simulations of climate conditions under different greenhouse gas emission scenarios and climate models. These projections offer insights into potential future climate scenarios, including changes in temperature, precipitation patterns, and extreme weather events.</p>
+                    <p class="text-muted my-3">Future data allows researchers and policymakers to anticipate and plan for potential climate impacts, develop adaptation strategies, and evaluate the effectiveness of mitigation measures to address climate change challenges</p>
                 </div>
             </div>
             <div class="row">
@@ -170,7 +199,8 @@
                         </svg>
                         <h5 class="fw-bold mb-0 ms-2">Variables</h5>
                     </div>
-                    <p class="text-muted my-3">Auctor nisi et, habitant gravida ad lectus posuere.</p>
+                    <p class="text-muted my-3">The CHELSA Climate Database provides a wide range of climatic variables that are essential for understanding and analyzing climate patterns and trends.</p>
+                    <p class="text-muted my-3">Due to the large volume of variables available on CHELSA, only the following were used in the final model training, as explained further in the <a href ="modelling.html"><b>Modelling section</b></a></p>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
@@ -231,10 +261,11 @@
                         <h5 class="fw-bold mb-0 ms-2">Why these variables?</h5>
                     </div>
                     <p class="text-muted my-3">This was determined by analysing the feature importances given after training a model on the presence and absence datapoints.</p>
-                    <p class="text-muted my-3">For more info on this, check out the <span style="text-decoration: underline;">Modelling </span>section</p>
+                    <p class="text-muted my-3">For more info on this, check out the <a href ="modelling.html"><b>Modelling section</b></a></p>
                 </div>
             </div>
         </div>
+    </section>
         <section class="py-4 py-xl-5">
             <div class="container">
                 <div class="text-white bg-primary border rounded border-0 border-primary d-flex flex-column justify-content-between flex-lg-row p-4 p-md-5">
